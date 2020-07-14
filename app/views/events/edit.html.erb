@@ -1,0 +1,9 @@
+<h1>Edit Event<h1>
+
+<%= render 'form' %>
+
+<%= link_to 'Back', event_path(@event) %>
+
+<%= form_with model: @event, method: "delete" do %>
+    <%= submit_tag "Delete Event" %>
+<% end %>
