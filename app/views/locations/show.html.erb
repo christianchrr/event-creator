@@ -1,0 +1,12 @@
+<h1>Location:</h1>
+
+<h3>
+    <%= @location.name %><br>
+    <%= @location.address %><br>
+    <%= @location.city %>, <%= @location.state %> <%= @location.zip %>
+</h3>
+
+<br>
+
+<%= link_to 'Edit', edit_location_path(@location) %>
+<%= link_to 'Back', locations_path %>
