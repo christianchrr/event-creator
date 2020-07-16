@@ -1,4 +1,5 @@
 class EventsController < ApplicationController
+    before_action :require_login
 
     def show
         @event = Event.find(params[:id])
@@ -39,6 +40,10 @@ class EventsController < ApplicationController
     end
 
     private
+
+    def require_login
+        return head(:forbidden) unless session.include? :user_id
+    end
 
     def event_params(*args)
         params.require(:event).permit(*args)
