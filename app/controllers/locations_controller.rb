@@ -1,5 +1,6 @@
 class LocationsController < ApplicationController
     before_action :authentication_required
+    before_action :set_location, only: [:show, :edit, :update, :destroy]
 
     def show
         @location = Location.find(params[:id])
@@ -27,7 +28,8 @@ class LocationsController < ApplicationController
     end
 
     def update
-        if @location.update(location_params(:name, :address, :city, :state, :zip))
+        @location.update(location_params(:name, :address, :city, :state, :zip))
+        if @location.save
           redirect_to location_path(@location)
         else
           render :edit
@@ -40,6 +42,10 @@ class LocationsController < ApplicationController
     end
 
     private
+
+    def set_location
+        @location = Location.find(params[:id])
+    end
 
     def location_params(*args)
         params.require(:location).permit(*args)

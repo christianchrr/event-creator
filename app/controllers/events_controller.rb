@@ -10,11 +10,15 @@ class EventsController < ApplicationController
     end
 
     def new
+        @locations = Location.all
         @event = Event.new
     end
 
     def create
-        @event = Event.new(event_params(:name, :description, :month, :day, :year, :location))
+        @locations = Location.all
+        @event = Event.new(event_params(:name, :description, :month, :day, :year, location_id: [], location_attributes: [:name, :address, :city, :state, :zip]))
+        @event.user_id = current_user.id
+        # @event.location_id = 
         if @event.save
             flash[:message] = "Event created!"
             redirect_to event_path(@event)

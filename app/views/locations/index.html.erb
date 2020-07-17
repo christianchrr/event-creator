@@ -1,6 +1,8 @@
 <h1>All Locations</h1>
 
-<%= link_to 'Create Location', new_location_path %><br>
+<%= link_to 'Create Location', new_location_path %>
+<%= link_to 'All Events', events_path %>
+<%= link_to 'Logout', logout_path %><br>
 
 <% @locations.each do |location| %>
     <ul>

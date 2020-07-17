@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
   root 'events#index'
   get "/auth/google_oauth2/callback", to: 'events#index'
-  resources :locations
+  resources :locations do
+    resources :events
+  end
   resources :events
   resources :users do
-    resources :events, only: [:index]
+    # resources :events, only: [:index]
   end
   resources :sessions
   get '/logout' => "sessions#destroy"
