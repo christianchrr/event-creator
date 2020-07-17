@@ -4,7 +4,7 @@
 <%= link_to 'All Locations', locations_path %>
 <%= link_to 'Logout', logout_path %><br>
 
-<% @events.events_group.each do |event| %>
+<% @events.each do |event| %>
     <ul>
         <li><%= link_to event.name, event_path(event) %></li>
     </ul>
