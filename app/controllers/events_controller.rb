@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-    before_action :require_login
+    before_action :authentication_required
 
     def show
         @event = Event.find(params[:id])
@@ -14,7 +14,7 @@ class EventsController < ApplicationController
     end
 
     def create
-        @event = Event.new(event_params(:name, :description))
+        @event = Event.new(event_params(:name, :description, :month, :day, :year, :location))
         if @event.save
             flash[:message] = "Event created!"
             redirect_to event_path(@event)
@@ -27,7 +27,7 @@ class EventsController < ApplicationController
     end
 
     def update
-        if @event.update(event_params(:name, :description))
+        if @event.update(event_params(:name, :description, :month, :day, :year, :location))
           redirect_to event_path(@event)
         else
           render :edit
@@ -40,10 +40,6 @@ class EventsController < ApplicationController
     end
 
     private
-
-    def require_login
-        return head(:forbidden) unless session.include? :user_id
-    end
 
     def event_params(*args)
         params.require(:event).permit(*args)

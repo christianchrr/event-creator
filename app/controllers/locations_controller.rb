@@ -1,5 +1,5 @@
 class LocationsController < ApplicationController
-    before_action :require_login
+    before_action :authentication_required
 
     def show
         @location = Location.find(params[:id])
@@ -40,10 +40,6 @@ class LocationsController < ApplicationController
     end
 
     private
-
-    def require_login
-        return head(:forbidden) unless session.include? :user_id
-    end
 
     def location_params(*args)
         params.require(:location).permit(*args)

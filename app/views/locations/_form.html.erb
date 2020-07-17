@@ -6,20 +6,16 @@
     <% end %>
     <br>
     <br>
-    <%= f.label :name %><br>
-    <%= f.text_field :name %><br><br>
 
-    <%= f.label :address %><br>
-    <%= f.text_field :address %><br><br>
+    <%= f.text_field :name, :placeholder => "Name*" %><br><br>
 
-    <%= f.label :city %><br>
-    <%= f.text_field :city %><br><br>
+    <%= f.text_field :address, :placeholder => "Street Address*" %><br><br>
 
-    <%= f.label :state %><br>
-    <%= f.text_field :state %><br><br>
+    <%= f.text_field :city, :placeholder => "City*" %><br><br>
 
-    <%= f.label :zip %><br>
-    <%= f.number_field :zip %><br><br>
+    <%= f.text_field :state, :placeholder => "State*" %><br><br>
+
+    <%= f.number_field :zip, :placeholder => "Zip*" %><br><br>
 
     <%= f.submit %>
 <% end %>

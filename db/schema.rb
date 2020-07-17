@@ -17,6 +17,9 @@ ActiveRecord::Schema.define(version: 2020_07_08_045524) do
     t.string "description"
     t.integer "user_id"
     t.integer "location_id"
+    t.integer "month"
+    t.integer "day"
+    t.integer "year"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["location_id"], name: "index_events_on_location_id"
@@ -36,7 +39,6 @@ ActiveRecord::Schema.define(version: 2020_07_08_045524) do
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.string "email"
-    t.string "user_name"
     t.string "password_digest"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

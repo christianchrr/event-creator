@@ -10,5 +10,10 @@
     <%= @event.description %>
 </p>
 
+<p>
+    <label>Date:</label>
+    <%= @event.month %>/<%= @event.day %>/<%= @event.year %>
+</p>
+
 <%= link_to 'Edit', edit_event_path(@event) %>
 <%= link_to 'Back', events_path %>
