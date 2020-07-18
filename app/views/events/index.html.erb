@@ -1,6 +1,14 @@
-<h1>All Events</h1>
+<% if @location %>
+    <h1><%= @location.name %>'s Events</h1>
+<% else %> 
+    <h1>All Events</h1>
+<% end %>
 
-<%= link_to 'Create Event', new_event_path %>
+<% if @location %>
+    <%= link_to 'Create Event', new_location_event_path %>
+<% else %>
+    <%= link_to 'Create Event', new_event_path %>
+<% end %>
 <%= link_to 'All Locations', locations_path %>
 <%= link_to 'Logout', logout_path %><br>
 

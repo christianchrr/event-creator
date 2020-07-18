@@ -3,6 +3,10 @@ class EventsController < ApplicationController
     before_action :set_event, only: [:show, :edit, :update, :destroy]
 
     def show
+        if params[:location_id]
+            @location = Location.find_by(id: params[:location_id])
+            @event = @location.event
+        end
     end
 
     def index
