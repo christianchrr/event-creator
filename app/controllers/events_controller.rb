@@ -5,7 +5,6 @@ class EventsController < ApplicationController
     def show
         if params[:location_id]
             @location = Location.find_by(id: params[:location_id])
-            @event = @location.event
         end
     end
 
@@ -26,7 +25,7 @@ class EventsController < ApplicationController
         @event = Event.new
     end
 
-    def create
+    def create 
         @locations = Location.all
         @event = Event.new(event_params(:name, :description, :month, :day, :year, :location_id))
         @event.user_id = current_user.id

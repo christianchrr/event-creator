@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   root 'events#index'
-  get "/auth/google_oauth2/callback", to: 'events#index'
+  get "/auth/google_oauth2/callback", to: 'sessions#create'
   resources :locations do
     resources :events
   end

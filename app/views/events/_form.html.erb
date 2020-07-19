@@ -18,7 +18,7 @@
         <%= f.hidden_field :location_id, value: @location.id %>
     <% else %>
         <%= f.label "Location Select*" %><br>
-        <%= f.collection_select :location_ids, @locations, :id, :name, include_blank: true %><br><br>
+        <%= f.collection_select :location_id, @locations, :id, :name, include_blank: true %><br><br>
     <% end %>
 
     <%= f.submit %>
