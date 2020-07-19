@@ -1,9 +1,19 @@
-<h1>Create New Event</h1>
-
-<%= render 'form' %><br>
-
-<% if @location %>
-    <%= link_to 'Back', location_events_path %>
-<% else %>
-    <%= link_to 'Back', events_path %>
-<% end %>
+<div class="app">
+  <div class="app-content">
+    <div class="app-inner">
+      <div class="header">
+        <h1>Create New Event</h1>
+      </div>
+      <div class="body">
+        <%= render 'form' %><br>
+        <div class="menu">
+          <% if @location %>
+              <%= link_to 'Back', location_events_path %>
+          <% else %>
+              <%= link_to 'Back', events_path %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

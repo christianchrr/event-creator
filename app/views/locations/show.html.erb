@@ -1,14 +1,20 @@
-<h1>Location:</h1>
-
-<h4>
-    <%= @location.name %><br>
-    <%= @location.address %><br>
-    <%= @location.city %>, <%= @location.state %> <%= @location.zip %>
-</h4>
-
-<br>
-
-<%= link_to 'View all events for this location', location_events_path(@location) %> 
-<%= link_to 'Edit', edit_location_path(@location) %>
-<%= link_to 'Add Event', new_location_event_path(@location) %>
-<%= link_to 'All Locations', locations_path %>
+<div class="app">
+  <div class="app-content">
+    <div class="app-inner">
+      <div class="header">
+        <h1>Location:</h1>
+      </div>
+      <h4>
+          <%= @location.name %><br>
+          <%= @location.address %><br>
+          <%= @location.city %>, <%= @location.state %> <%= @location.zip %>
+      </h4>
+      <div class="menu">
+        <%= link_to 'View all events for this location', location_events_path(@location) %>
+        <%= link_to 'Edit', edit_location_path(@location) %>
+        <%= link_to 'Add Event', new_location_event_path(@location) %>
+        <%= link_to 'All Locations', locations_path %>
+      </div>
+    </div>
+  </div>
+</div>

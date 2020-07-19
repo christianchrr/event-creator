@@ -1,12 +1,23 @@
-<h1>All Locations</h1>
-
-<%= link_to 'Create Location', new_location_path %>
-<%= link_to 'All Events', events_path %>
-<%= link_to 'Logout', logout_path %><br>
-
-<% @locations.each do |location| %>
-    <ul>
-        <li><%= link_to location.name, location_path(location) %></li>
-    </ul>
-<% end %>
-
+<div class="app">
+  <div class="app-content">
+    <div class="app-inner">
+      <div class="header">
+        <h1>All Locations</h1>
+      </div>
+      <div class="body">
+        <div class="menu">
+          <%= link_to 'Create Location', new_location_path %>
+          <%= link_to 'All Events', events_path %>
+          <%= link_to 'Logout', logout_path %>
+        </div>
+        <div class="events-list">
+          <% @locations.each do |location| %>
+            <ul class="list-group">
+              <li class="list-group-item"><%= link_to location.name, location_path(location) %></li>
+            </ul>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

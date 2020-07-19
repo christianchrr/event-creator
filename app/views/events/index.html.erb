@@ -1,20 +1,31 @@
-<% if @location %>
-    <h1><%= @location.name %>'s Events</h1>
-<% else %> 
-    <h1>All Events</h1>
-<% end %>
-
-<% if @location %>
-    <%= link_to 'Create Event', new_location_event_path %>
-<% else %>
-    <%= link_to 'Create Event', new_event_path %>
-<% end %>
-<%= link_to 'All Locations', locations_path %>
-<%= link_to 'Logout', logout_path %><br>
-
-<% @events.each do |event| %>
-    <ul>
-        <li><%= link_to event.name, event_path(event) %></li>
-    </ul>
-<% end %>
-
+<div class="app">
+  <div class="app-content">
+    <div class="app-inner">
+      <div class="header">
+        <% if @location %>
+          <h1><%= @location.name %>'s Events</h1>
+        <% else %>
+          <h1>All Events</h1>
+        <% end %>
+      </div>
+      <div class="body">
+        <div class="menu">
+          <% if @location %>
+            <%= link_to 'Create Event', new_location_event_path %>
+          <% else %>
+            <%= link_to 'Create Event', new_event_path %>
+          <% end %>
+          <%= link_to 'All Locations', locations_path %>
+          <%= link_to 'Logout', logout_path %>
+        </div>
+        <div class="events-list">
+          <% @events.each do |event| %>
+            <ul class="list-group">
+              <li class="list-group-item"><%= link_to event.name, event_path(event) %></li>
+            </ul>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

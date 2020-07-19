@@ -1,9 +1,17 @@
-<h1>Edit Event</h1>
+<div class="app">
+  <div class="app-content">
+    <div class="app-inner">
+      <div class="header">
+        <h1>Edit Event</h1>
+      </div>
+      <%= render 'form' %>
+      <div class="menu">
+        <%= form_with model: @event, method: "delete" do %>
+          <%= submit_tag "Delete Event" %>
+        <% end %><br>
 
-<%= render 'form' %>
-
-<%= link_to 'Back', event_path(@event) %>
-
-<%= form_with model: @event, method: "delete" do %>
-    <%= submit_tag "Delete Event" %>
-<% end %>
+        <%= link_to 'Back', event_path(@event) %>
+      </div>
+    </div>
+  </div>
+</div>
