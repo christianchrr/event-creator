@@ -51,3 +51,12 @@ class LocationsController < ApplicationController
     end
 
 end
+
+# Have a route that has a form where a user can type in the name of a location, when they submit the form there's a route in the backend that tries to find a location with that name, and if one exists, the user is redirected to that location's show page 
+
+# Notes for real life scenario: 
+# - Ask clarifying questions 
+# - Plan, break it down into steps 
+
+#1. Create the form on the index
+#2. Put the route in the route file and write the method in the controller 

@@ -16,7 +16,12 @@
             <%= link_to 'Create Event', new_event_path %>
           <% end %>
           <%= link_to 'All Locations', locations_path %>
-          <%= link_to 'Logout', logout_path %>
+          <%= link_to 'Logout', logout_path %><br><br>
+          <label>Search By Location</label>
+          <%= form_tag(events_path, method: :get) do %>
+            <%= text_field_tag(:search, params[:search]) %>
+            <%= submit_tag ("Search") %>
+          <% end %>
         </div>
         <div class="events-list">
           <% @events.each do |event| %>

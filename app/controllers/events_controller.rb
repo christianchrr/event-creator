@@ -13,7 +13,7 @@ class EventsController < ApplicationController
             @location = Location.find_by(id: params[:location_id])
             @events = @location.events
         else
-            @events = Event.all
+            @events = Event.search(params[:search])
         end
     end
 
