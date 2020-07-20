@@ -83,7 +83,7 @@ ul, li {
 }
 
 .header h1 {
-    text-decoration: underline;
+    /* text-decoration: underline; */
 }
 
 .list-group-item {
